@@ -1,0 +1,19 @@
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+.metrics-table th, .metrics-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+.metrics-table th {
+  background: #f0f0f0;
+  font-weight: bold;
+  text-align: center;
+}
+

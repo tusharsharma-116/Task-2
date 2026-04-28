@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+header {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+#messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.message.ai {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.message .sender {
+    font-weight: 500;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.message .time {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+.input-group {
+    padding: 20px 30px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 12px;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#messageInput:focus {
+    border-color: #667eea;
+}
+
+.input-group button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.input-group button:hover {
+    transform: translateY(-1px);
+}
+
+.history-btn {
+    padding: 0 30px 20px;
+    text-align: center;
+}
+
+.history-btn button {
+    padding: 10px 25px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.status {
+    padding: 10px 30px;
+    background: #d4edda;
+    color: #155724;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        box-shadow: none;
+        height: 100dvh;
+    }
+    
+    header {
+        padding: 15px 20px;
+    }
+    
+    #messages {
+        padding: 15px;
+    }
+    
+    .input-group {
+        padding: 15px 20px;
+        position: sticky;
+        bottom: 0;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
+
+/* Scrollbar */
+#messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+/* Image features */
+.upload-group {
+    padding: 0 30px 20px;
+    display: flex;
+    gap: 12px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+}
+
+.upload-group input[type=file] {
+    flex: 1;
+    padding: 12px;
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    background: #f8f9fa;
+}
+
+.upload-group button {
+    padding: 12px 24px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image-results {
+    background: #f8f9ff;
+    padding: 20px;
+    margin: 10px 20px 20px;
+    border-radius: 15px;
+    border: 1px solid #e7e7ff;
+}
+
+.result-img {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 5px;
+}
+
+#metrics {
+    font-family: monospace;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.ai-desc {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+

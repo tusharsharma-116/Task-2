@@ -1,0 +1,15 @@
+flask==3.0.3
+flask-socketio==5.3.6
+eventlet==0.36.1
+google-generativeai==0.7.2
+pymongo==4.8.0
+python-dotenv==1.0.1
+Pillow==10.4.0
+numpy==2.1.0
+opencv-python==4.10.0.84
+pydub==0.25.1
+librosa==0.10.2
+matplotlib==3.9.2
+soundfile==0.12.1
+
+

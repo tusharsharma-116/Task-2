@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/audio-style.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chatroom Pro</h1>
+            <p>Corporate Chat with AI Assistant</p>
+        </header>
+        
+        <div id="status" class="status"></div>
+        
+        <div id="messages" class="messages"></div>
+        
+<div class="input-group">
+            <input type="text" id="messageInput" placeholder="Type message or /ai your question..." maxlength="500">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        
+
+        <div class="upload-group">
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="uploadImage()">Analyze Image</button>
+        </div>
+        <div class="upload-group">
+            <input type="file" id="audioInput" accept="audio/*" style="max-width: 300px;">
+            <button onclick="uploadAudio()">Analyze Audio (≤5MB)</button>
+        </div>
+
+
+        <div id="imageResults" class="image-results" style="display:none;">
+            <h3>Compress & Features</h3>
+            <div>
+                <img id="origImg" class="result-img">
+                <img id="compImg" class="result-img">
+            </div>
+            <div>
+                <img id="edgeImg" class="result-img">
+                <img id="kpImg" class="result-img">
+            </div>
+            <div id="metrics"></div>
+            <div id="aiDesc" class="ai-desc"></div>
+        </div>
+        <div id="audioResults" class="image-results" style="display:none;">
+            <h3>Audio Compress (≤5MB)</h3>
+            <div>
+                <img id="audioOrigSpec" class="result-img">
+                <img id="audioCompSpec" class="result-img">
+            </div>
+            <table id="audioTable" class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Bitrate</th>
+                        <th>Size</th>
+                        <th>MSE</th>
+                        <th>SNR dB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="audioAiDesc" class="ai-desc"></div>
+        </div>
+
+        
+        <div class="history-btn">
+            <button onclick="loadHistory()">Load History</button>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
